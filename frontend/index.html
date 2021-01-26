@@ -13,6 +13,9 @@
         <p>Get a random activity suggestion and save the ones you like!</p>
     </header>
     <main>
+        <section id="welcome">
+            <h2 id="user-name"></h2>
+        </section>
         <form action="/" method="GET" id="sign-in-form">
             <label for="user-name">Your Name:</label>
             <input type="text" id="user-name" name="name">
@@ -22,12 +25,12 @@
             <label for="activity-type">Activity Type:</label>
             <select name="type" id="activity-type">
             </select>
-            <input type="submit" value="Get Activity">
+            <button type="button" value="get-activity" id="get-button">Get Activity</button>
         </form>
         <section id="display-activity">
             <div id="activity-div">
                 <h3 id="activity-name"></h3>
-                <h4 id="activity-type"></h4>
+                <h4 id="act-type"></h4>
                 <p id="participants"></p>
                 <p id="price"></p>
                 <p id="accessibility"></p>

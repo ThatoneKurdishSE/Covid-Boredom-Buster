@@ -3,9 +3,11 @@ const activityTypes = ["education", "recreational", "social", "diy", "charity", 
 const $activitySelect = document.querySelector("#activity-type")
 const $activityDisplay = document.querySelector("#display-activity")
 const $signInForm = document.querySelector("#sign-in-form")
+
+const $activityButton = document.querySelector("#get-button")
 const queryParams = new URLSearchParams(window.location.search)
-const activityType = queryParams.get('type')
 const userName = queryParams.get('name')
+let currentUser = null
 
 function setActivityOptions(){
     activityTypes.forEach(activity => {
@@ -21,21 +23,14 @@ if (userName){
         .then(user => {
             welcomeUser(user)
             setActivityOptions()
-        })
-}
-
-if (activityType){
-    fetch(`${backendURL}/getActivity?type=${activityType}`)
-        .then(response => response.json())
-        .then(activity => {
-            displayActivity(activity)
-            setActivityOptions()
-        })
+            currentUser = user
+            console.log(user)
+    })
 }
 
 function displayActivity(activity){
     $activityName = document.querySelector('#activity-name')
-    $activityType = document.querySelector('#activity-type')
+    $activityType = document.querySelector('#act-type')
     $activityParticipants = document.querySelector('#participants')
     $activityPrice = document.querySelector('#price')
     $activityAccessibility = document.querySelector('#accessibility')
@@ -48,10 +43,20 @@ function displayActivity(activity){
 }
 
 function welcomeUser(user){
-    $signInForm.classList.toggle('hidden')
-    $userName = document.createElement('h2')
+    $signInForm.classList.add('hidden')
+    $userName = document.querySelector('#user-name')
     $userName.textContent = `Welcome ${user.name}!`
-    document.querySelector('main').prepend($userName)
 }
+
+$activityButton.addEventListener('click', (event) => {
+    activityType = $activitySelect.value
+    fetch(`${backendURL}/getActivity?type=${activityType}`)
+        .then(response => response.json())
+        .then(activity => {
+            console.log(activity)
+            displayActivity(activity)
+            setActivityOptions()
+        })
+})
 
 setActivityOptions()

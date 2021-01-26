@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID BOREDOM BUSTER</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the COVID BOREDOM BUSTER!</h1>
+        <p>Get a random activity suggestion and save the ones you like!</p>
+    </header>
+    <main>
+        <section id="welcome">
+            <h2 id="user-name"></h2>
+        </section>
+        <form action="/" method="GET" id="sign-in-form">
+            <label for="user-name">Your Name:</label>
+            <input type="text" id="user-name" name="name">
+            <input type="submit" value="submit">
+        </form>
+        <form action="/" method="GET" id="activity-select-form"> 
+            <label for="activity-type">Activity Type:</label>
+            <select name="type" id="activity-type">
+            </select>
+            <button type="button" value="get-activity" id="get-button">Get Activity</button>
+        </form>
+        <section id="display-activity">
+            <div id="activity-div">
+                <h3 id="activity-name"></h3>
+                <h4 id="act-type"></h4>
+                <p id="participants"></p>
+                <p id="price"></p>
+                <p id="accessibility"></p>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -7,7 +7,7 @@ const $signInForm = document.querySelector("#sign-in-form")
 function setActivityOptions(){
     activityTypes.forEach(activity => {
         const $activityOption = document.createElement('option')
-        $activityOption.innerText = activity
+        $activityOption.textContent = activity
         $activitySelect.appendChild($activityOption)
     })
 }

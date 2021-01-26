@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID BOREDOM BUSTER</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the COVID BOREDOM BUSTER!</h1>
+        <p>Get a random activity suggestion and save the ones you like!</p>
+    </header>
+    <main>
+        <form action="http://localhost:9000/users" method="GET" id="sign-in-form">
+            <!-- consider custom route that if user is not found, user is created -->
+            <label for="user-name">Your Name:</label>
+            <input type="text" id="user-name" name="name">
+            <input type="submit" value="submit">
+        </form>
+        <form action="http://localhost:9000/activities" method="GET" id="activity-select-form"> 
+            <label for="activity-type">Activity Type:</label>
+            <select name="type" id="activity-type">
+            </select>
+            <input type="submit" value="Get Activity">
+        </form>
+        <section id="display-activity"></section>
+    </main>
+    <footer></footer>
+</body>
+</html>

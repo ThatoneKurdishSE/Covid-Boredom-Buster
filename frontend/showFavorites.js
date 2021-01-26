@@ -1,0 +1,1 @@
+const $favoritesContainer = document.querySelector("#display-favorites")

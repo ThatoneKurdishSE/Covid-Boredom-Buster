@@ -5,6 +5,7 @@ const $activityDisplay = document.querySelector("#display-activity")
 const $signInForm = document.querySelector("#sign-in-form")
 const queryParams = new URLSearchParams(window.location.search)
 const activityType = queryParams.get('type')
+const userName = queryParams.get('name')
 
 function setActivityOptions(){
     activityTypes.forEach(activity => {
@@ -12,6 +13,15 @@ function setActivityOptions(){
         $activityOption.textContent = activity
         $activitySelect.appendChild($activityOption)
     })
+}
+
+if (userName){
+    fetch(`${backendURL}/userLogin?name=${userName}`)
+        .then(response => response.json())
+        .then(user => {
+            welcomeUser(user)
+            setActivityOptions()
+        })
 }
 
 if (activityType){
@@ -37,6 +47,11 @@ function displayActivity(activity){
     $activityAccessibility.textContent = `Accessbility Rating: ${activity.accessibility}`
 }
 
-
+function welcomeUser(user){
+    $signInForm.classList.toggle('hidden')
+    $userName = document.createElement('h2')
+    $userName.textContent = `Welcome ${user.name}!`
+    document.querySelector('main').prepend($userName)
+}
 
 setActivityOptions()

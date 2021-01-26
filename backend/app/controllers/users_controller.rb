@@ -27,4 +27,14 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.destroy
     end
+
+    def login
+        @user = User.find_by(name: params[:name])
+        if !@user
+            @user = User.create(
+                name: params[:name]
+            )
+        end
+        render json: @user
+    end
 end

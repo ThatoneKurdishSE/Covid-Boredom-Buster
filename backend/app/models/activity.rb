@@ -1,4 +1,4 @@
 class Activity < ApplicationRecord
-    has_many :users
-    has_many :favorites, through: :users
+    has_many :favorites
+    has_many :users, through: :favorites
 end

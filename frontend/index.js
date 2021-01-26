@@ -7,7 +7,7 @@ const $signInForm = document.querySelector("#sign-in-form")
 const $activityButton = document.querySelector("#get-button")
 const queryParams = new URLSearchParams(window.location.search)
 const userName = queryParams.get('name')
-let currentUser = null
+let userID = null
 
 function setActivityOptions(){
     activityTypes.forEach(activity => {
@@ -22,8 +22,7 @@ if (userName){
         .then(response => response.json())
         .then(user => {
             welcomeUser(user)
-            setActivityOptions()
-            currentUser = user
+            userID = user.id
             console.log(user)
     })
 }
@@ -55,7 +54,6 @@ $activityButton.addEventListener('click', (event) => {
         .then(activity => {
             console.log(activity)
             displayActivity(activity)
-            setActivityOptions()
         })
 })
 

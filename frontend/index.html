@@ -19,13 +19,21 @@
             <input type="text" id="user-name" name="name">
             <input type="submit" value="submit">
         </form>
-        <form action="http://localhost:9000/activities" method="GET" id="activity-select-form"> 
+        <form action="/" method="GET" id="activity-select-form"> 
             <label for="activity-type">Activity Type:</label>
             <select name="type" id="activity-type">
             </select>
             <input type="submit" value="Get Activity">
         </form>
-        <section id="display-activity"></section>
+        <section id="display-activity">
+            <div id="activity-div">
+                <h3 id="activity-name"></h3>
+                <h4 id="activity-type"></h4>
+                <p id="participants"></p>
+                <p id="price"></p>
+                <p id="accessibility"></p>
+            </div>
+        </section>
     </main>
     <footer></footer>
 </body>

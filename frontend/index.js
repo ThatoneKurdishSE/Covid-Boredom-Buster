@@ -3,7 +3,7 @@ const activityTypes = ["education", "recreational", "social", "diy", "charity", 
 const $activitySelect = document.querySelector("#activity-type")
 const $activityDisplay = document.querySelector("#display-activity")
 const $signInForm = document.querySelector("#sign-in-form")
-
+const $postForm = document.querySelector("#post-form")
 const $activityButton = document.querySelector("#get-button")
 const queryParams = new URLSearchParams(window.location.search)
 const userName = queryParams.get('name')
@@ -39,6 +39,10 @@ function displayActivity(activity){
     $activityParticipants.textContent = `Number of Participants: ${activity.participants}`
     $activityPrice.textContent = `Price: ${activity.price}`
     $activityAccessibility.textContent = `Accessbility Rating: ${activity.accessibility}`
+
+    const postParams = `${makeSaveParams(activity)}&userID=${userID}`
+    $postForm.classList.remove('hidden')
+    $postForm.action = `${backendURL}/activities?${postParams}`
 }
 
 function welcomeUser(user){
@@ -56,5 +60,14 @@ $activityButton.addEventListener('click', (event) => {
             displayActivity(activity)
         })
 })
+
+function makeSaveParams(activity){
+    let params = ""
+    for (let key in activity){
+        params += `${key}=${activity[key]}&`
+    }
+    params = params.replace(/\s/g,"%20")
+    return params
+}
 
 setActivityOptions()

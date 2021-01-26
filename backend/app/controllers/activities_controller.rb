@@ -11,14 +11,16 @@ class ActivitiesController < ApplicationController
     end
 
     def create
+        @userid = params[:userID]
         @newActivity = Activity.create(
             name: params[:name],
             accessibility: params[:accessibility],
             participants: params[:participants],
             price: params[:price],
-            key: params[:key]
+            key: params[:key],
+            activity_type: params[:type]
         )
-        render json: @newActivity
+        redirect_to "http://localhost:3000/showFavorites.html?userID=#{@userid}"
     end
 
     def update

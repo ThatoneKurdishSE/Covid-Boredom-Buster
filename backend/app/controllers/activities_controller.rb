@@ -37,4 +37,11 @@ class ActivitiesController < ApplicationController
         @activity = Activity.find(params[:id])
         @activity.destroy
     end
+
+    def get_activity
+        type = params[:type]
+        response = RestClient.get("http://www.boredapi.com/api/activity?type=#{type}")
+        result = JSON.parse response
+        render json: result
+    end
 end

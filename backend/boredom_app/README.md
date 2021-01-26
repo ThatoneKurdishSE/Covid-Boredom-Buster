@@ -1,4 +1,30 @@
-# Covid-Boredom-Buster
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+COVID boredom buster
+
+https://www.boredapi.com/documentation
 
 MVP:
 Making a call to the API and displaying a random activity- save
@@ -13,7 +39,7 @@ Fancy Styling
 
 
 Activity class
-"activity": string
+    "activity": string
 	"accessibility": float
 	"type": string
 	"participants": integer
@@ -29,7 +55,3 @@ User class
 Favorite class
 user_id: references
 activity_id: references
-
-
-
-Building an app using an existing api called "Bored". This app will ideally have all of the CRUD features by the time we're finished!

@@ -15,7 +15,7 @@ class FavoritesController < ApplicationController
             user_id: params[:user_id],
             activity_id: params[:activity_id]
         )
-        render json: @newFavorite, include: [:user, :activity]
+        render json: @favorite, include: [:user, :activity]
     end
 
     def update
@@ -30,5 +30,15 @@ class FavoritesController < ApplicationController
     def destroy
         @favorite = Favorite.find(params[:id])
         @favorite.destroy
+    end
+
+    def newFav
+        @user_id = params[:user_id].to_i
+        @activity_id = params[:activity_id].to_i
+        @newFavorite = Favorite.create(
+            user: User.find(@user_id),
+            activity: Activity.find(@activity_id)
+        )
+        redirect_to "http://localhost:3000/showFavorites.html?id=#{@user_id}"
     end
 end

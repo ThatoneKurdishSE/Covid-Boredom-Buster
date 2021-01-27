@@ -8,7 +8,7 @@ fetch(`http://localhost:9000/users/${userId}`)
     .then(response => response.json())
     .then(user =>{
         userName = user.name
-        user.activities.forEach(activity=>{
+        user.favorites.forEach(favorite=>{
                 const h1 = document.createElement('h1')
                 const h2 = document.createElement('h2')
                 const h3 = document.createElement('h3')
@@ -17,15 +17,28 @@ fetch(`http://localhost:9000/users/${userId}`)
                 div.classList.add("Activity-card")
                 const h5 = document.createElement('h5')
 
-                    h1.textContent = activity.name
-                    h2.textContent = `Accessibility level: ${activity.accessibility}`
-                    h3.textContent = `Price: ${activity.price}`
-                    h4.textContent = `Number of participants: ${activity.participants}`
-                    h5.textContent = activity.type
-                    div.append(h1, h2, h3, h4, h5)
+                    h1.textContent = favorite.activity.name
+                    h2.textContent = `Accessibility level: ${favorite.activity.accessibility}`
+                    h3.textContent = `Price: ${favorite.activity.price}`
+                    h4.textContent = `Number of participants: ${favorite.activity.participants}`
+                    h5.textContent = favorite.activity.type
+                   $delButton =  addDeleteButton(favorite, div)
+                    div.append(h1, h2, h3, h4, h5, $delButton)
                     $favoritesContainer.append(div)
                     
                     $backLink.href = `/?name=${userName}`
+                    
         })
     })
 
+function addDeleteButton(favorite, div){
+    const $delButton = document.createElement('button')
+    $delButton.textContent = "Delete Activity 😿"
+    $delButton.addEventListener('click', (event) => {
+        div.remove()
+        fetch(`http://localhost:9000/favorites/${favorite.id}`, {
+            method: 'DELETE'
+        })
+    })
+    return $delButton
+}

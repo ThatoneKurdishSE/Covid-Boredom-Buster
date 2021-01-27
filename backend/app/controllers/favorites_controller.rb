@@ -15,7 +15,7 @@ class FavoritesController < ApplicationController
             user_id: params[:user_id],
             activity_id: params[:activity_id]
         )
-        render json: @favorite, include: [:user, :activity]
+        render json: @newFavorite, include: [:user, :activity]
     end
 
     def update

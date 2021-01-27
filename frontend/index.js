@@ -4,7 +4,9 @@ const $activitySelect = document.querySelector("#activity-type")
 const $activityDisplay = document.querySelector("#display-activity")
 const $signInForm = document.querySelector("#sign-in-form")
 const $postForm = document.querySelector("#post-form")
+const $activitySelectForm = document.querySelector("#activity-select-form")
 const $activityButton = document.querySelector("#get-button")
+const $logOutButton = document.querySelector("#log-out")
 const queryParams = new URLSearchParams(window.location.search)
 const userName = queryParams.get('name')
 let userID = null
@@ -23,7 +25,6 @@ if (userName){
         .then(user => {
             welcomeUser(user)
             userID = user.id
-            console.log(user)
     })
 }
 
@@ -49,6 +50,8 @@ function welcomeUser(user){
     $signInForm.classList.add('hidden')
     $userName = document.querySelector('#user-name')
     $userName.textContent = `Welcome ${user.name}!`
+    $logOutButton.classList.remove("hidden")
+    $activitySelectForm.classList.remove("hidden")
 }
 
 $activityButton.addEventListener('click', (event) => {
@@ -56,7 +59,6 @@ $activityButton.addEventListener('click', (event) => {
     fetch(`${backendURL}/getActivity?type=${activityType}`)
         .then(response => response.json())
         .then(activity => {
-            console.log(activity)
             displayActivity(activity)
         })
 })
@@ -71,3 +73,7 @@ function makeSaveParams(activity){
 }
 
 setActivityOptions()
+
+$logOutButton.addEventListener('click', (event) => {
+    window.location.replace("/")
+})

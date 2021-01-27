@@ -35,10 +35,13 @@ class FavoritesController < ApplicationController
     def newFav
         @user_id = params[:user_id].to_i
         @activity_id = params[:activity_id].to_i
-        @newFavorite = Favorite.create(
+        @favorite = Favorite.where("user_id = ? AND activity_id = ?", @user_id, @activity_id)
+        if !@favorite
+            @favorite = Favorite.create(
             user: User.find(@user_id),
             activity: Activity.find(@activity_id)
-        )
+            )
+        end
         redirect_to "http://localhost:3000/showFavorites.html?id=#{@user_id}"
     end
 end

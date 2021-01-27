@@ -12,15 +12,18 @@ class ActivitiesController < ApplicationController
 
     def create
         @user_id = params[:userID]
-        @newActivity = Activity.create(
-            name: params[:activity],
-            accessibility: params[:accessibility],
-            participants: params[:participants],
-            price: params[:price],
-            key: params[:key],
-            activity_type: params[:type]
-        )
-        @activity_id = @newActivity.id
+        @activity = Activity.find_by(key: params[:key])
+        if !@activity
+            @activity = Activity.create(
+                name: params[:activity],
+                accessibility: params[:accessibility],
+                participants: params[:participants],
+                price: params[:price],
+                key: params[:key],
+                activity_type: params[:type]
+            )
+        end
+        @activity_id = @activity.id
         # redirect_to "http://localhost:9000/newFav?user_id=#{@user_id}&activity_id=${@activity_id}"
         redirect_to :controller => 'favorites', :action => 'newFav', :user_id => @user_id, :activity_id => @activity_id
     end

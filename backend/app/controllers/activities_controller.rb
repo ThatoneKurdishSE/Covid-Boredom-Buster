@@ -11,16 +11,18 @@ class ActivitiesController < ApplicationController
     end
 
     def create
-        @userid = params[:userID]
+        @user_id = params[:userID]
         @newActivity = Activity.create(
-            name: params[:name],
+            name: params[:activity],
             accessibility: params[:accessibility],
             participants: params[:participants],
             price: params[:price],
             key: params[:key],
             activity_type: params[:type]
         )
-        redirect_to "http://localhost:3000/showFavorites.html?userID=#{@userid}"
+        @activity_id = @newActivity.id
+        # redirect_to "http://localhost:9000/newFav?user_id=#{@user_id}&activity_id=${@activity_id}"
+        redirect_to :controller => 'favorites', :action => 'newFav', :user_id => @user_id, :activity_id => @activity_id
     end
 
     def update

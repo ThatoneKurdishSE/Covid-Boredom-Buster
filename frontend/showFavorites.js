@@ -25,7 +25,7 @@ let userName = null
 fetch(`http://localhost:9000/users/${userId}`)
     .then(response => response.json())
     .then(user =>{
-        userName = user.name
+        userName = user.user.name
         user.favorites.forEach(favorite=>{
                 const name = document.createElement('h1')
                 const access = document.createElement('h3')

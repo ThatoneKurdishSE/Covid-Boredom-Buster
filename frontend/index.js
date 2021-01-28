@@ -38,8 +38,8 @@ function displayActivity(activity){
     $activityName.textContent = `Activity: ${activity.activity}`
     $activityType.textContent = `Type: ${activity.type}`
     $activityParticipants.textContent = `Number of Participants: ${activity.participants}`
-    $activityPrice.textContent = `Price: ${activity.price}`
-    $activityAccessibility.textContent = `Accessbility Rating: ${activity.accessibility}`
+    $activityPrice.textContent = `Price: ${setPrice(activity)}`
+    $activityAccessibility.textContent = `Accessbility Rating: ${setAccessibility(activity)}`
 
     const postParams = `${makeSaveParams(activity)}&userID=${userID}`
     $postForm.classList.remove('hidden')
@@ -77,3 +77,25 @@ setActivityOptions()
 $logOutButton.addEventListener('click', (event) => {
     window.location.replace("/")
 })
+
+function setPrice(activity){
+    if (activity.price == 0){
+        return "Free"
+    } else if (activity.price > 0.0 && activity.price < 0.3){
+        return "Cheap"
+    } else if (activity.price > 0.3 && activity.price < 0.6) {
+        return "Moderate"
+    } else {
+        return "Expensive"
+    }
+}
+
+function setAccessibility(activity){
+    if (activity.accessibility == 0){
+        return "Accessible to Most"
+    } else if (0.0 < activity.accessibility < 0.6){
+        return "Somewhat Accessible"
+    } else {
+        return "Limited Accessibility"
+    }
+}

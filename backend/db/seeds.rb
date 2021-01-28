@@ -18,14 +18,16 @@ climbing = Activity.create(
     accessibility: 4.2,
     participants: 1,
     price: 5.12,
-    key: 1234567
+    key: 1234567,
+    activity_type: "recreational"
 )
 kickboxing = Activity.create(
     name: "kick-boxing", 
     accessibility: 3.7,
     participants: 2,
     price: 6.9,
-    key: 1234568
+    key: 1234568,
+    activity_type: "recreational"
 )
 
 favorite1 = Favorite.create(user: kat, activity: climbing)

@@ -18,6 +18,10 @@ text{
     
 }
 
+.hidden {
+	display: none;
+}
+
 #display-favorites{
 	display: flex;
 	flex-wrap: wrap;

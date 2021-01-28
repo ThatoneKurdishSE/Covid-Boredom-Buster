@@ -28,8 +28,8 @@ class UserSerializer
         access = activity["accessibility"]
         if access == 0
             access = "Accessible to Most"
-        elsif access > 0 && access < 0.5
-            access = "Accessible to Most"
+        elsif access > 0.0 && access < 0.6
+            access = "Somewhat Accessible"
         else 
             access = "Limited Accessibility"
         end
@@ -39,7 +39,7 @@ class UserSerializer
         price = activity["price"]
         if price == 0
             price = "Free"
-        elsif price > 0 && price < 0.3
+        elsif price > 0.0 && price < 0.3
             price = "Cheap"
         elsif price > 0.3 && price < 0.6
             price = "Moderate"

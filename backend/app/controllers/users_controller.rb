@@ -7,9 +7,6 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        # render json: @user.to_json(:include => {
-        #     :favorites => {:include => :activity}
-        # })
         render json: UserSerializer.new(@user).to_serialized_json
     end
 

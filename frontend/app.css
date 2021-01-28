@@ -27,11 +27,11 @@ text{
 
 .Activity-card {
 	background-size: cover;
-	opacity: 0.5;
+	opacity: 0.3;
 	margin: 0.5rem;
 	padding: 0.5rem;
-	width: 15rem;
-	height: 15rem;
+	width: 14rem;
+	height: 14rem;
 	border-radius: 1rem;
 	box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 	cursor: pointer;
@@ -46,23 +46,36 @@ text{
 	opacity: 1.0;
 }
 
-.Activity-card > h4 {
+.card-info {
+	position: relative;
+	background-color: rgba(255,255,255,0.5);
+	width: 13rem;
+	height: 11rem;
+	border-radius: 1rem;
+}
+
+.card-info > h3 {
 	margin: 0;
 	padding: 0.5rem;
 }
 
+.card-info > p {
+	font-size: small;
+	padding-left: 1rem;
+}
+
 .Activity-card > button {
-	background-color: transparent;
-	border: 3px solid #062b27;
+	background-color: rgba(255,255,255,0.5);
+	border: 3px solid #563ef0;
 	border-radius: 50px;
 	-webkit-transition: all .15s ease-in-out;
 	transition: all .15s ease-in-out;
-	color: #062b27;
+	color: #563ef0;
 	position: absolute;
 	bottom: 0.5rem;
 	right: 0.5rem;
 }
 .Activity-card > button:hover {
-	box-shadow: 0 0 10px 0 #062b27 inset, 0 0 20px 2px #062b27;
-	border: 3px solid #062b27;
+	box-shadow: 0 0 10px 0 #563ef0 inset, 0 0 20px 2px #563ef0;
+	border: 3px solid #563ef0;
   }

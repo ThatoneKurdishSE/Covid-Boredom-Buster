@@ -27,23 +27,26 @@ fetch(`http://localhost:9000/users/${userId}`)
     .then(user =>{
         userName = user.name
         user.favorites.forEach(favorite=>{
-                const name = document.createElement('h2')
-                const access = document.createElement('h4')
-                const price = document.createElement('h4')
-                const part = document.createElement('h4')
-                const type = document.createElement('h4')
+                const name = document.createElement('h3')
+                const access = document.createElement('p')
+                const price = document.createElement('p')
+                const part = document.createElement('p')
+                // const type = document.createElement('p')
                 const div = document.createElement('div')
+                const cardInfo = document.createElement('div')
                 div.classList.add("Activity-card")
                 div.id = favorite.id
+                cardInfo.classList.add("card-info")
                 
 
                     name.textContent = favorite.activity.name
                     access.textContent = `Accessibility level: ${favorite.activity.accessibility}`
                     price.textContent = `Price: ${favorite.activity.price}`
                     part.textContent = `Number of participants: ${favorite.activity.participants}`
-                    type.textContent = favorite.activity.activity_type
+                    // type.textContent = favorite.activity.activity_type
                     $delButton =  addDeleteButton(favorite, div)
-                    div.append(name, access, price, part, type, $delButton)
+                    cardInfo.append(name, access, price, part)
+                    div.append(cardInfo, $delButton)
                     $favoritesContainer.append(div)
                     setCardImage(favorite)
                     $backLink.href = `/?name=${userName}`

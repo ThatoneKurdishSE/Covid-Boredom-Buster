@@ -34,8 +34,8 @@ text{
 	opacity: 0.3;
 	margin: 0.5rem;
 	padding: 0.5rem;
-	width: 14rem;
-	height: 14rem;
+	width: 24rem;
+	height: 24rem;
 	border-radius: 1rem;
 	box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 	cursor: pointer;
@@ -52,20 +52,23 @@ text{
 
 .card-info {
 	position: relative;
-	background-color: rgba(255,255,255,0.5);
-	width: 13rem;
-	height: 11rem;
+	background-color: rgba(255,255,255,0.7);
+	width: 20rem;
+	height: 20rem;
 	border-radius: 1rem;
+	left: 20px;
+	top: 10px;
+}
+
+.card-info > h1 {
+	margin: 0;
+	padding: 0.5rem;
+	font-size: 2rem;
 }
 
 .card-info > h3 {
-	margin: 0;
-	padding: 0.5rem;
-}
-
-.card-info > p {
-	font-size: small;
 	padding-left: 1rem;
+	font-size: 1.5rem;
 }
 
 .Activity-card > button {
@@ -78,6 +81,7 @@ text{
 	position: absolute;
 	bottom: 0.5rem;
 	right: 0.5rem;
+	font-size: 1.5rem;
 }
 .Activity-card > button:hover {
 	box-shadow: 0 0 10px 0 #563ef0 inset, 0 0 20px 2px #563ef0;

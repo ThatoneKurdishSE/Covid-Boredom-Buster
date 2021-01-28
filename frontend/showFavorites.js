@@ -27,10 +27,10 @@ fetch(`http://localhost:9000/users/${userId}`)
     .then(user =>{
         userName = user.name
         user.favorites.forEach(favorite=>{
-                const name = document.createElement('h3')
-                const access = document.createElement('p')
-                const price = document.createElement('p')
-                const part = document.createElement('p')
+                const name = document.createElement('h1')
+                const access = document.createElement('h3')
+                const price = document.createElement('h3')
+                const part = document.createElement('h3')
                 // const type = document.createElement('p')
                 const div = document.createElement('div')
                 const cardInfo = document.createElement('div')

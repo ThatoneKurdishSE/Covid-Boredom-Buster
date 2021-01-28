@@ -36,7 +36,7 @@ function displayActivity(activity){
     $activityAccessibility = document.querySelector('#accessibility')
 
     $activityName.textContent = `Activity: ${activity.activity}`
-    $activityType.textContent = `Type: ${activity.type}`
+    $activityType.textContent = `Type: ${capFirstLetter(activity.type)}`
     $activityParticipants.textContent = `Number of Participants: ${activity.participants}`
     $activityPrice.textContent = `Price: ${setPrice(activity)}`
     $activityAccessibility.textContent = `Accessbility Rating: ${setAccessibility(activity)}`
@@ -98,4 +98,7 @@ function setAccessibility(activity){
     } else {
         return "Limited Accessibility"
     }
+}
+function capFirstLetter(string){
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }

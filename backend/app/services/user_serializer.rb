@@ -17,6 +17,7 @@ class UserSerializer
         @user.favorites.map do |favorite|
             newfav = favorite.as_json
             activity = favorite.activity.as_json
+            activity["activity_type"] = activity["activity_type"].capitalize
             activity["accessibility"] = updateAccessibility(activity)
             activity["price"] = updatePrice(activity)
             newfav["activity"] = activity

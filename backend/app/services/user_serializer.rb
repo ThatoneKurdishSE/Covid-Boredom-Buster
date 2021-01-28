@@ -1,6 +1,6 @@
 class UserSerializer
 
-    def initialize(user_object)
+    def initialize(user_object, search = nil)
         @user = user_object
         @favorites = []
     end

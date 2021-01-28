@@ -12,6 +12,12 @@
         <h1>User's Favorite Activities</h1>
     </header>
     <main>
+        <form action="">
+            <select name="type" id="select-type"></select>
+            <button id="select-button" type="button">Filter Activies</button>
+        </form>
+        <label for="search">Search Favs:</label>
+        <input id="search" type="text" onkeyup="searchFilter()">
         <section id="display-favorites"></section>
     </main>
     <footer>

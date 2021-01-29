@@ -15,6 +15,7 @@ The user can get a random activity suggestion based the type of activity selecte
 The user can save the activity to a favorites list and view their favorites.  
 The user can delete a favorite from their favorites list.   
 The user can view their favorite activities and filter by activity type(select options) or activity name (dynamic text input).    
+User can log out when they are finished with the session.
 User's name, and favorite activities are stored in a SQLite3 database, so the information is stored from session to session.   
 
 ### API
@@ -37,7 +38,7 @@ Price is returned from the API and stored in the database as a float between 0 a
     0.3 < price < 0.6 : displayed as "Moderate  
     0.61 < price = "Moderate"  
 
-ACCESSIBILITY 
+ACCESSIBILITY  
 Acessibility is returned from the API and stored in the database as a float between 0 and 1, describing how possible an event is to do with zero being the most accessible. The app serializes this data to display accessibility as follows:  
     accessibility = 0 : displayed as "Accessible to Most"  
     0.0 < accessibility < 0.6 : displayed as "Somewhat Accessible"  

@@ -31,17 +31,17 @@ ACTIVITY TYPES
 Activity types include: "Education", "Recreational", "Social", "Diy", "Charity", "Cooking", "Relaxation", "Music", and "Busywork."
 
 PRICE
-Price is returned from the API and stored in the database as a float between 0 and 1, describing the cost of the event with zero being free. The app serializes this data to display price as follows:
-    price = 0 : dispalyed as "Free"
-    0.0 < price < 0.3 : displayed as "Cheap"
-    0.3 < price < 0.6 : displayed as "Moderate
-    0.61 < price = "Moderate"
+Price is returned from the API and stored in the database as a float between 0 and 1, describing the cost of the event with zero being free. The app serializes this data to display price as follows:  
+    price = 0 : dispalyed as "Free"  
+    0.0 < price < 0.3 : displayed as "Cheap"  
+    0.3 < price < 0.6 : displayed as "Moderate  
+    0.61 < price = "Moderate"  
 
-ACCESSIBILITY
-Acessibility is returned from the API and stored in the database as a float between 0 and 1, describing how possible an event is to do with zero being the most accessible. The app serializes this data to display accessibility as follows:
-    accessibility = 0 : displayed as "Accessible to Most"
-    0.0 < accessibility < 0.6 : displayed as "Somewhat Accessible"
-    0.61 < accessibility = displayed as "Limited Accessibility"
+ACCESSIBILITY 
+Acessibility is returned from the API and stored in the database as a float between 0 and 1, describing how possible an event is to do with zero being the most accessible. The app serializes this data to display accessibility as follows:  
+    accessibility = 0 : displayed as "Accessible to Most"  
+    0.0 < accessibility < 0.6 : displayed as "Somewhat Accessible"  
+    0.61 < accessibility = displayed as "Limited Accessibility"  
 
 Future iterations could include an option for a user to add their own activities and include these user activities in the random suggestions. Full login could be implemented with a username and password. Users could rate activities or check off ones they've tried. 
 

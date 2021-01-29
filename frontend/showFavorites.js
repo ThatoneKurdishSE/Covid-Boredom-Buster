@@ -25,6 +25,7 @@ const backendURL = 'http://localhost:9000'
 const queryParams = new URLSearchParams(window.location.search)
 const userId = queryParams.get('id')
 let userName = null
+
 let favoriteActivities = null
 
 setActivityOptions()

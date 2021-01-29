@@ -7,7 +7,7 @@ COVID BOREDOM BUSTER is a full stack application that allows a user to login wit
  
 
 ## SUMMARY
-The COVID vaccine is rolling out, but in the mean times, we're all SOOOO BORED. Mix up your routine and get new activity suggestions to try out. 
+The COVID vaccine is rolling out, but in the mean time, we're all SOOOO BORED. Mix up your routine and get new activity suggestions to try out. 
 
 This app allows a user to login with a name.  
 A new user will automatically be created if their name doesn't exist.

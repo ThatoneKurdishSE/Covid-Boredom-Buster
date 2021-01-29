@@ -49,4 +49,6 @@ Future iterations could include an option for a user to add their own activities
 This app was created using Ruby on Rails, ActiveRecord, Javascript, and SQLite3. 
 
 #### DEPLOYMENT
-To use this app, download the files, run 
+To use this app, download the files, cd into the backend folder, and run bundle install, then rails db:migrate.  
+Run your rails server on port 9000 with rails s -p 9000.  
+Cd into your frontend and run lite-server. 

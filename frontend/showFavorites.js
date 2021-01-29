@@ -21,7 +21,6 @@ const $backLink = document.querySelector("#back-link")
 const queryParams = new URLSearchParams(window.location.search)
 const userId = queryParams.get('id')
 let userName = null
-
 fetch(`http://localhost:9000/users/${userId}`)
     .then(response => response.json())
     .then(user =>{

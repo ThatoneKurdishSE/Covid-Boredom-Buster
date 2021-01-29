@@ -1,7 +1,17 @@
 body {
-	background: linear-gradient(-45deg, #ebc5ba, #b98a9c, #97d7ee, #23d5ab);
+	background: linear-gradient(-45deg, #e7896e, #b98a9c, #5c7c88, #1b5346);
 	background-size: 1000% 1000%;
 	animation: gradient 15s ease infinite;
+	font-family: Andale Mono,AndaleMono,monospace;
+	font-size: 170%;
+	text-align:left;
+}
+
+h1{
+	font-family: Consolas,monaco,monospace;
+	font-size: 170%;
+	background-color: #cfcccc63;
+	text-align: center;
 }
 @keyframes gradient {
 	0% {
@@ -14,8 +24,70 @@ body {
 		background-position: 0% 50%;
 	}
 }
-text{
-    
+button{
+	font-family: Helvetica;
+	letter-spacing: 0.2em;
+	color: rgb(0, 0, 0);
+	transition: all 0.5s;
+	position: relative;
+	line-height: 20px;
+	height: 50px;
+	text-align: center;
+	width: 250px;
+	cursor: pointer;
+	background-color: #0000003a;
+	}
+button span {
+	z-index: 3;
+	display:inline-block
+	position: relative;
+	width: 200%;
+	height: 200%;
+}
+button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+button::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+button:hover::before {
+transform: rotate(-45deg);ß
+background-color: rgba(255,255,255,0);
+}
+button:hover::after {
+transform: rotate(45deg);
+background-color: rgba(255,255,255,0);
+}
+input {
+	height: 30px;
+	width: 300px;
+	background-color: #5050503a;
+	text-align: center;
+}
+select{
+	height: 30px;
+	width: 300px;
+	background-color: #5050503a;
+	text-align: center;
+	position: relative;
 }
 
 .hidden {
@@ -86,4 +158,24 @@ text{
 .Activity-card > button:hover {
 	box-shadow: 0 0 10px 0 #563ef0 inset, 0 0 20px 2px #563ef0;
 	border: 3px solid #563ef0;
-  }
+}
+h2 {
+	font-size: 100%;
+}
+label {
+	font-size: 70%;
+}
+select {
+	line-height: 10px;
+	height: 40px;
+	text-align: center;
+	width: 250px;
+	font-family: Consolas,monaco,monospace;
+	font-size: 70%;
+}
+p {
+	font-family: Consolas,monaco,monospace;
+	font-size: 70%;
+	background-color: #cfcccc63;
+	text-align: center;
+}

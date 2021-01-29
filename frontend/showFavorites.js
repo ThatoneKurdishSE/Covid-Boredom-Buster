@@ -21,6 +21,7 @@ const $favoritesContainer = document.querySelector("#display-favorites")
 const $backLink = document.querySelector("#back-link")
 const $selectType = document.querySelector("#select-type")
 const $selectButton = document.querySelector("#select-button")
+const $logOutButton = document.querySelector("#log-out")
 const backendURL = 'http://localhost:9000'
 const queryParams = new URLSearchParams(window.location.search)
 const userId = queryParams.get('id')
@@ -119,3 +120,6 @@ function searchFilter(){
     })
 }
 
+$logOutButton.addEventListener('click', (event) => {
+    window.location.replace("/")
+})

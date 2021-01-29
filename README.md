@@ -18,14 +18,14 @@ The user can view their favorite activities and filter by activity type(select o
 User can log out when they are finished with the session.
 User's name, and favorite activities are stored in a SQLite3 database, so the information is stored from session to session.   
 
-### API
+## API
 The API used for this app is https://www.boredapi.com/
 Random activities are GET request by type to 
 https://www.boredapi.com/activity?type=:type
 
 If an activity is saved to a user's favorites, the activity is also saved to the SQLite3 database. 
 
-#### BACKGROUND INFORMATION
+## BACKGROUND INFORMATION
 
 ACTIVITY TYPES
 
@@ -46,10 +46,10 @@ Acessibility is returned from the API and stored in the database as a float betw
 
 Future iterations could include an option for a user to add their own activities and include these user activities in the random suggestions. Full login could be implemented with a username and password. Users could rate activities or check off ones they've tried. 
 
-#### TECHNOLOGY
+## TECHNOLOGY
 This app was created using Ruby on Rails, ActiveRecord, Javascript, and SQLite3. 
 
-#### DEPLOYMENT
+## DEPLOYMENT
 To use this app, download the files, cd into the backend folder, and run bundle install, then rails db:migrate.  
 Run your rails server on port 9000 with rails s -p 9000.  
 Cd into your frontend and run lite-server. 

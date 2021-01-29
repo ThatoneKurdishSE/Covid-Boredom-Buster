@@ -12,12 +12,16 @@
         <h1>Here here, a list of all of your favs! 🥳</h1>
     </header>
     <main>
-        <form action="">
-            <select name="type" id="select-type"></select>
-            <button id="select-button" type="button">Filter Activies</button>
-        </form>
-        <label for="search">Search Favs:</label>
-        <input id="search" type="text" onkeyup="searchFilter()">
+        <section id="search-section">
+            <form id="select-form" action="">
+                <select name="type" id="select-type"></select>
+                <button id="select-button" type="button">Filter Activies</button>
+            </form>
+            <form id="search-form" action="">
+                <label for="search">Search Favs:</label>
+                <input id="search" type="text" onkeyup="searchFilter()">
+            </form>
+        </section>
         <section id="display-favorites"></section>
     </main>
     <footer>

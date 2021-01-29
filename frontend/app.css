@@ -39,7 +39,7 @@ button{
 	}
 button span {
 	z-index: 3;
-	display:inline-block
+	display:inline-block;
 	position: relative;
 	width: 200%;
 	height: 200%;
@@ -107,7 +107,7 @@ select{
 	margin: 0.5rem;
 	padding: 0.5rem;
 	width: 24rem;
-	height: 24rem;
+	height: 30rem;
 	border-radius: 1rem;
 	box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 	cursor: pointer;
@@ -117,8 +117,7 @@ select{
 
 .Activity-card:hover {
 	transform: scale(0.9, 0.9);
-	box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-	  -5px -5px 30px 15px rgba(0,0,0,0.22);
+	box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25);
 	opacity: 1.0;
 }
 
@@ -126,7 +125,7 @@ select{
 	position: relative;
 	background-color: rgba(255,255,255,0.7);
 	width: 20rem;
-	height: 20rem;
+	height: 25rem;
 	border-radius: 1rem;
 	left: 20px;
 	top: 10px;
@@ -154,6 +153,7 @@ select{
 	bottom: 0.5rem;
 	right: 0.5rem;
 	font-size: 1.5rem;
+	width: 8rem;
 }
 .Activity-card > button:hover {
 	box-shadow: 0 0 10px 0 #563ef0 inset, 0 0 20px 2px #563ef0;
@@ -178,4 +178,19 @@ p {
 	font-size: 70%;
 	background-color: #cfcccc63;
 	text-align: center;
+}
+
+#search-section{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 1rem;
+}
+
+#select-form{
+	padding: 2rem;
+}
+
+#search-form{
+	padding: 2rem;
 }
